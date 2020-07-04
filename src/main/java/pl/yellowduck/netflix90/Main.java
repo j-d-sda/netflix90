@@ -44,6 +44,7 @@ public class Main {
                 actors,
                 director
         );
+        theRoom.printOut();
     }
 }
 /*

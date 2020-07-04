@@ -19,4 +19,21 @@ public class VideoCasette {
         this.actors = actors;
         this.director = director;
     }
+    
+    public void printOut() {
+        StringBuilder builder = new StringBuilder();
+        
+        builder.append(this.id)
+                .append("|")
+                .append(this.price)
+                .append("|")
+                .append(this.title)
+                .append("|")
+                .append(this.category)
+                .append("|")
+                .append(this.director)
+                .append("|")
+                .append(this.actors);
+        System.out.println(builder.toString());
+    }
 }

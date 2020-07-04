@@ -8,4 +8,9 @@ public class Director extends Person {
     public void introduce() {
         System.out.println("My name is " + firstName + " " + lastName + ". I am director.");
     }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
+    }
 }
