@@ -6,9 +6,15 @@ public class Actor extends Person {
     }
 
     public void introduce() {
+        /*
         if (this.sex == Sex.FEMALE)
             System.out.println("My name is " + firstName + " " + lastName + ". I am an actress.");
         else
             System.out.println("My name is " + firstName + " " + lastName + ". I am an actor.");
+         */
+        switch (this.sex) {
+            case FEMALE: System.out.println("My name is " + firstName + " " + lastName + ". I am an actress."); break;
+            case MALE: System.out.println("My name is " + firstName + " " + lastName + ". I am an actor."); break;
+        }
     }
 }
