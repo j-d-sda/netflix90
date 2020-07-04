@@ -17,9 +17,4 @@ public class Actor extends Person {
             case MALE: System.out.println("My name is " + firstName + " " + lastName + ". I am an actor."); break;
         }
     }
-
-    @Override
-    public String toString() {
-        return firstName + " " + lastName;
-    }
 }
