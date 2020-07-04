@@ -3,7 +3,7 @@ package pl.yellowduck.resources;
 public abstract class Person {
     protected String firstName;
     protected String lastName;
-    protected Sex sex;
+    protected final Sex sex;
 
     public Person(String firstName, String lastName, Sex sex) {
         this.firstName = firstName;
