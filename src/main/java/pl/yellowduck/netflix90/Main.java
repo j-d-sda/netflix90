@@ -1,71 +1,33 @@
 package pl.yellowduck.netflix90;
 
-import pl.yellowduck.resources.*;
+import pl.yellowduck.resources.MainIO;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
-import java.util.Set;
 
 public class Main {
-    public static void main(String[] args) {
-        Director director = new Director("Tommy", "Wiseau", Sex.MALE);
-        Actor tommyActor = new Actor ("Tommy", "Wiseau", Sex.MALE);
-        Actor julietteActor = new Actor ("Juliette", "Danielle", Sex.FEMALE);
-        Actor gregActor = new Actor ("Greg", "Sastero", Sex.MALE);
+    public static void main(String[] args) throws  IOException {
         /*
-        List<Person> persons = new ArrayList<>();
+        MainIO mainIO = new MainIO();
 
-        persons.add(director);
-        persons.add(tommyActor);
-        persons.add(julietteActor);
-        persons.add(gregActor);
-        */
-        Set<Actor> actors = new HashSet<Actor>();
+        mainIO.printDirectoryContent();
+         */
 
-        actors.add(tommyActor);
-        actors.add(julietteActor);
-        actors.add(gregActor);
+        Path path = Paths.get("C:\\Temp\\test_file.txt");
 
-        /*
-        for (Person person : persons) {
-            person.introduce();
+        List<String> lines = null;
+        try {
+            lines = Files.readAllLines(path);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        System.out.println("Hello Netflix90");
-        */
+        for(String l : lines) {
+            System.out.println(l);
+        }
 
-        VideoCasette theRoom = new VideoCasette(
-                "12345",
-                BigDecimal.valueOf(100),
-                "The Room",
-                Category.DRAMA,
-                actors,
-                director
-        );
-        theRoom.printOut();
     }
 }
-/*
-public class Main {
-  public static void main(String[] args) {
-    Director director = new Director("Tommy", "Wiseau", Sex.MALE);
-    Actor tommyActor = new Actor ("Tommy", "Wiseau", Sex.MALE);
-    Actor julietteActor = new Actor ("Juliette", "Danielle", Sex.FEMALE);
-    Actor gregActor = new Actor ("Greg", "Sastero", Sex.MALE);
-    Set<Person> persons = new HashSet<>();
-
-    persons.add(director);
-    persons.add(tommyActor);
-    persons.add(julietteActor);
-    persons.add(gregActor);
-
-    for (Person person : persons) {
-      person.introduce();
-    }
-
-    System.out.println("Hello Netflix90");
-  }
-}
-*/
