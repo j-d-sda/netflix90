@@ -2,6 +2,8 @@ package pl.yellowduck.netflix90;
 
 import pl.yellowduck.resources.MainIO;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -15,7 +17,7 @@ public class Main {
 
         mainIO.printDirectoryContent();
          */
-
+        /*
         Path path = Paths.get("C:\\Temp\\test_file.txt");
 
         List<String> lines = null;
@@ -28,6 +30,19 @@ public class Main {
         for(String l : lines) {
             System.out.println(l);
         }
+        */
 
+        String content = "This is the content to write into file\n";
+
+        // If the file doesn't exists, create and write to it
+        // If the file exists, truncate (remove all content) and write to it
+        try (FileWriter writer = new FileWriter("C:\\Temp\\test_file.txt");
+             BufferedWriter bw = new BufferedWriter(writer)) {
+
+            bw.write(content);
+
+        } catch (IOException e) {
+            System.err.format("IOException: %s%n", e);
+        }
     }
 }
