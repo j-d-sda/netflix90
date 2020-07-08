@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) throws  IOException {
@@ -31,7 +33,7 @@ public class Main {
             System.out.println(l);
         }
         */
-
+        /*
         String content = "This is the content to write into file\n";
 
         // If the file doesn't exists, create and write to it
@@ -43,6 +45,24 @@ public class Main {
 
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
+        }
+        */
+        List<String> capitals = new ArrayList<String>();
+
+        capitals.add("Warsaw");
+        capitals.add("Berlin");
+        capitals.add("Madrid");
+
+        for(String capital : capitals) {
+           if (capital.startsWith("W")) {
+               StringBuilder sb = new StringBuilder();
+               sb.append(capital);
+               sb = sb.reverse();
+
+               //reversedCapital = ;
+
+               System.out.println(sb);
+           }
         }
     }
 }
