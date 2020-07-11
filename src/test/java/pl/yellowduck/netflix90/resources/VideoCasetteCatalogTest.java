@@ -79,8 +79,9 @@ public class VideoCasetteCatalogTest {
         );
         // when
 
-        catalog.addVideoCasette(videoCasette01);
-        catalog.addVideoCasette(videoCasette02);
+        //catalog.addVideoCasette(videoCasette01);
+        //catalog.addVideoCasette(videoCasette02);
+        catalog.addVideoCasette(videoCasette01, videoCasette02);
 
         // then
 
