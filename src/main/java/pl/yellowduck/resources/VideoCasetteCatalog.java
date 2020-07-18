@@ -13,12 +13,14 @@ public class VideoCasetteCatalog implements IVideoCasetteCatalog {
     */
 
     @Override
-    public void addVideoCasette(VideoCasette videoCasette) {
-        casettes.add(videoCasette);
+    public void addVideoCasette(VideoCasette videoCasette) throws CasetteAddException {
+        if (casettes.add(videoCasette)) {
+            throw new CasetteAddException("Casette already added!");
+        }
     }
 
     @Override
-    public void addVideoCasette(VideoCasette... videoCasette) {
+    public void addVideoCasette(VideoCasette... videoCasette) throws CasetteAddException   {
         for (VideoCasette casette : videoCasette) {
             addVideoCasette(casette);
         }
